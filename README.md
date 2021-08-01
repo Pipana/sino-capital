@@ -6,9 +6,10 @@ Logo being designed on Twitter. None selected yet.
 
 We will build the website.
 
+I propose we use 11ty, of course, and proceed to make a lightening fast website.
+
 
 Here is a home page mock-up by [@redmanbravemm](https://twitter.com/redmanbravemm):
-
 
 https://twitter.com/redmanbravemm/status/1419977176674443271/photo/1
 

@@ -1,5 +1,8 @@
 # sino-capital
 
+Twitter Update Thread: https://twitter.com/FranTiberious/status/1421888403797254150?s=20
+
+
 `npm install`
 `npx @11ty/eleventy --serve`
 

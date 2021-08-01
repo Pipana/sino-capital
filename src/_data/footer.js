@@ -1,6 +1,6 @@
 module.exports = {
   zh: {
-    text: "Footer en CHinese"
+    text: "Footer in Chinese"
   },
   en: {
     text: "Footer in English"

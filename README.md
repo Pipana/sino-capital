@@ -2,6 +2,11 @@
 un-solicited re-design of https://www.sinoglobalcapital.com/
 
 
+Logo being designed on Twitter. None selected yet. 
+
+We will build the website.
+
+
 
 https://twitter.com/redmanbravemm/status/1419977176674443271/photo/1
 

@@ -5,6 +5,20 @@
 
 un-solicited re-design of https://www.sinoglobalcapital.com/
 
+
+
+Sitemap
+
+- Portfolio - can make data file for collection and individual pages...
+- About - can be text doument to begin with
+- Team - can make data file and collection
+- Research - these are links to github and medium. let's find a different way to present these
+- Press - make links list from data file, could make RSS feed from this
+- Contact
+
+
+
+
 Features:
 
 - language specific collections

@@ -1,0 +1,15 @@
+{
+  "name": "sino-capital",
+  "version": "1.0.0",
+  "description": "sino global capital website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipana/sino-capital"
+  },
+  "author": "Fran Swan",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "moment": "^2.24.0"
+  }
+}

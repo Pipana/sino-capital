@@ -1,6 +1,20 @@
 # sino-capital
+
+`npm install`
+`npx @11ty/eleventy --serve`
+
 un-solicited re-design of https://www.sinoglobalcapital.com/
 
+Features:
+
+- language specific collections
+- locales managed using directory data files
+- a date filter taking locales into account
+- a language switcher based on a `translationKey` set in YAML front matters
+
+
+
+Notes:
 
 Logo being designed on Twitter. None selected yet. 
 

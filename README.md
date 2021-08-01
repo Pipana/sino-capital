@@ -7,6 +7,8 @@ Logo being designed on Twitter. None selected yet.
 We will build the website.
 
 
+Here is a home page mock-up by [@redmanbravemm](https://twitter.com/redmanbravemm):
+
 
 https://twitter.com/redmanbravemm/status/1419977176674443271/photo/1
 

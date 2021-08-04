@@ -9,7 +9,16 @@
   "author": "Fran Swan",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^0.12.1",
     "moment": "^2.24.0"
+  },
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "node-sass": "^6.0.1",
+    "tachyons-sass": "^4.9.5"
+  },
+  "scripts": {
+    "build": "node-sass src/style.scss dist/style.css --output-style=compressed && npx @11ty/eleventy",
+    "dev": "concurrently \"node-sass src/style.scss dist/style.css -w\" \"npx @11ty/eleventy --serve\""
   }
 }

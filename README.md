@@ -1,16 +1,14 @@
-# sino-capital
+# Sino Global Capital
 
 Twitter Update Thread: https://twitter.com/FranTiberious/status/1421888403797254150?s=20
 
-
-`npm install`
-`npx @11ty/eleventy --serve`
+- `npm install`
+- `npm run dev`
 
 un-solicited re-design of https://www.sinoglobalcapital.com/
 
 
-
-Sitemap
+## Sitemap
 
 - Portfolio - can make data file for collection and individual pages...
 - About - can be text doument to begin with
@@ -20,9 +18,7 @@ Sitemap
 - Contact
 
 
-
-
-Features:
+## Features:
 
 - language specific collections
 - locales managed using directory data files
@@ -31,7 +27,7 @@ Features:
 
 
 
-Notes:
+## Notes:
 
 Logo being designed on Twitter. None selected yet. 
 

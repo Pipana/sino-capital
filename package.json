@@ -18,7 +18,7 @@
     "tachyons-sass": "^4.9.5"
   },
   "scripts": {
-    "build": "node-sass src/style.scss dist/style.css --output-style=compressed && npx @11ty/eleventy",
-    "dev": "concurrently \"node-sass src/style.scss dist/style.css -w\" \"npx @11ty/eleventy --serve\""
+    "build": "node-sass src/style.scss src/assets/css/style.css --output-style=compressed && npx @11ty/eleventy",
+    "dev": "concurrently \"node-sass src/style.scss src/assets/css/style.css -w\" \"npx @11ty/eleventy --serve\""
   }
 }

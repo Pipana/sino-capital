@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ locale }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sino Global Capital</title>
-  <meta name="description" content="">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  {% set hreflang = "en" if locale === "zh" else "zh" %}
+  {% set hreflangHref = site.absoluteURL + "/en" + permalinkMin if locale === "zh" else site.absoluteURL + "/zh" + permalinkMin %}
+  <link rel="alternate" hreflang="{{hreflang}}" href="{{hreflangHref}}" />
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>

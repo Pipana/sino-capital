@@ -1,5 +1,7 @@
-{% for navitem in mainnav[locale] %}
-  {% if loop.first %}<ul>{% endif %}
-    <li><a href="{{ navitem.url }}">{{ navitem.label }}</a></li>
-  {% if loop.last %}</ul>{% endif %}
-{% endfor %}
+<ul>
+  {% for navitem in mainnav[locale] %}
+    <li>
+      <a href="{{ navitem.url }}">{{ navitem.label }}</a>
+    </li>
+  {% endfor %}
+</ul>

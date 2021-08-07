@@ -1,12 +1,13 @@
 module.exports = {
+  name: "Sino Global Capital",
   absoluteURL: "https://www.sinoglobalcapital.com",
   languages: [
     {
-      label: "english",
+      label: "🇺🇸",
       code: "en"
     },
     {
-      label: "chinese",
+      label: "🇨🇳",
       code: "zh"
     }
   ]

@@ -7,7 +7,7 @@ sections:
 - type: directory
   path: src/en/pages
   label: English Pages
-  create: documents
+  create: none
   match: "**/*"
 upload_dir: src/assets/img
 public_path: "/assets/img"

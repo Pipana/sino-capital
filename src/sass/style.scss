@@ -1,4 +1,12 @@
 @import "tachyons";
+@import "vars";
+@import "animenu";
+@import "lang";
+
+html {
+  background-image: linear-gradient(315deg, #EBE0FA, #EBF7F9);
+  height: 100%;
+}
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;

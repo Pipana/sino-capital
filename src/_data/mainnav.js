@@ -1,10 +1,6 @@
 module.exports = {
   zh: [
     {
-      label: "家",
-      url: "/zh/"
-    },
-    {
       label: "文件夹",
       url: "/zh/portfolio.html"
     },
@@ -26,14 +22,10 @@ module.exports = {
     },
     {
       label: "接触",
-      url: "/zh/portfolio.html"
+      url: "/zh/contact.html"
     }
   ],
   en: [
-    {
-      label: "Home",
-      url: "/en/"
-    },
     {
       label: "Portfolio",
       url: "/en/portfolio.html"

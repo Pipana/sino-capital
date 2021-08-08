@@ -1,0 +1,31 @@
+.c-lggnav {
+  list-style: none;
+  margin: 0;
+  vertical-align: middle;
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 3px;
+    border-radius: 3px;
+    transition: .2s ease background-color;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: #d9deea;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .is-active {
+    background-color: #d9deea;
+    border-color: #c7c7c7;
+  }
+}

@@ -1,0 +1,312 @@
+// Animenu
+// https://github.com/catalinred/Animenu
+
+//  <nav class="animenu">
+//    <button class="animenu__toggle">
+//      <span class="animenu__toggle__bar"></span>
+//      <span class="animenu__toggle__bar"></span>
+//      <span class="animenu__toggle__bar"></span>
+//    </button>
+//    <ul class="animenu__nav animenu__nav--open">
+//      <li class="animenu__nav__item">
+//        <a class="animenu__nav__link">...</a>
+//        <ul class="animenu__nav__child">
+//          <li class="animenu__nav__subItem">
+//            <a class="animenu__nav__subLink">...</a>
+//          </li>
+//        </ul>
+//      </li>
+//    </ul>
+//  </nav>
+
+// Hamburger icon
+.animenu__toggle {
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #fff;
+  border: 0;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 2px;
+
+  &__bar {
+    display: block;
+    width: 20px; height: 2px;
+    background-color: map-get($color, black);
+    transition: .15s cubic-bezier(0.75, -0.55, 0.25, 1.55);
+
+    & + & {
+      margin-top: 4px;
+    }
+  }
+}
+
+.animenu__toggle--active {
+  .animenu__toggle__bar {
+    margin: 0;
+    position: absolute;
+
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Overall animenu styles
+.animenu {
+  ul {
+    padding: 0;
+    list-style: none;
+    font-size: 0; // 1
+  }
+
+  li, a {
+    display: inline-block;
+    font-size: 1.2rem; // 1
+  }
+
+  a {
+    text-decoration: none;
+
+    &.is-active {
+      font-weight: bold;
+    }
+  }
+}
+
+// First level
+.animenu__nav {
+  display: none;
+  position: absolute;
+  z-index: 1; // overcome .full-width-* blocks
+  left: 0; right: 0;
+  background-color: #fff;
+  background-clip: content-box;
+  border: 4px solid rgba(0, 0, 0, .3);
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  &--open {
+    display: block !important;
+    margin-top: 20px;
+  }
+
+  &__item {
+    width: 100%;
+
+    &:first-child > a::after,
+    &:first-child > a::before {
+      content: "";
+      position: absolute;
+      height: 0; width: 0;
+      right: 12px;
+      top: -5px;
+      border: 10px solid transparent;
+      border-top: 0;
+      border-bottom-color: #fff;
+    }
+
+    &:first-child > a::after {
+      top: -8px;
+      border-bottom-color: inherit;
+    }
+
+    &:first-child > a::before {
+      top: -14px;
+      border-bottom-color: rgba(0, 0, 0, .3);
+    }
+  }
+
+  &__link  {
+    color: map-get($color, black);
+    width: 100%;
+    padding: $gutter / 2;
+    position: relative; // dropdown caret
+    border-color: #fff;
+
+    // http://bit.ly/SkmL1T & currentColor keyword
+    &:first-child:nth-last-child(2)::after {
+      content: "";
+      position: absolute;
+      border: 4px solid transparent;
+      border-bottom: 0;
+      border-top-color: currentColor;
+      top: 50%;
+      margin-top: -2px;
+      margin-left: 5px;
+    }
+  }
+}
+
+// Second level
+.animenu__nav {
+  &__child {
+    transition: .1s ease margin-top;
+  }
+
+  &__subItem {
+    width: 100%;
+  }
+
+  &__subLink {
+    width: 100%;
+    color: map-get($color, black);
+    padding: $gutter / 2 $gutter / 2 $gutter / 2 $gutter * 2;
+
+    &.active {
+      color: #fff;
+      background-color: map-get($color, purple);
+      border-color: map-get($color, purple);
+    }
+  }
+}
+
+//  <nav class="animenu">
+//    <button class="animenu__toggle">
+//      <span class="animenu__toggle__bar"></span>
+//      <span class="animenu__toggle__bar"></span>
+//      <span class="animenu__toggle__bar"></span>
+//    </button>
+//    <ul class="animenu__nav animenu__nav--open">
+//      <li class="animenu__nav__item">
+//        <a class="animenu__nav__link">...</a>
+//        <ul class="animenu__nav__child">
+//          <li class="animenu__nav__subItem">
+//            <a class="animenu__nav__subLink">...</a>
+//          </li>
+//        </ul>
+//      </li>
+//    </ul>
+//  </nav>
+
+@media (min-width: 1024px) {
+
+  // Hide the hamburger icon
+  .animenu__toggle {
+    display: none;
+  }
+
+  // First level
+  .animenu__nav {
+    position: relative; // overcome absolute position
+    background-color: transparent;
+    border: 0;
+    display: block;
+    margin: 0;
+
+    &__item {
+      position: relative;
+      width: auto;
+      border: 0;
+
+      &:first-child > a::after,
+      &:first-child > a::before {
+        content: none;
+      }
+
+      &:hover {
+        .animenu__nav__child {
+          opacity: 1;
+          visibility: visible;
+          margin: 0;
+        }
+      }
+
+      // Duplicate stuff due to
+      // https://www.w3.org/TR/2018/PR-selectors-3-20180911/#grouping
+      // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/16651302/
+      &:focus-within {
+        .animenu__nav__child {
+          opacity: 1;
+          visibility: visible;
+          margin: 0;
+        }
+      }
+    }
+
+    &__link {
+      padding: $gutter / 2 $gutter;
+      color: currentColor;
+    }
+  }
+
+  // Second level
+  .animenu__nav {
+
+    &__child {
+      opacity: 0;
+      visibility: hidden;
+      margin-top: 25px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,.3);
+      background-color: #fff;
+      background-clip: content-box;
+      border-radius: 4px;
+      border: 4px solid rgba(0, 0, 0, .3);
+      min-width: 100%;
+      position: absolute;
+      top: 100%;
+    }
+
+    &__subItem {
+
+      &:first-child > a::after,
+      &:first-child > a::before {
+        content: "";
+        position: absolute;
+        height: 0; width: 0;
+        left: $gutter;
+        top: -5px;
+        border: 8px solid transparent;
+        border-top: 0;
+        border-bottom-color: #fff;
+      }
+
+      &:first-child > a::after {
+        top: -7px;
+        border-bottom-color: inherit;
+      }
+
+      &:first-child > a::before {
+        top: -12px;
+        border-bottom-color: rgba(0,0,0,.3);
+      }
+    }
+
+    &__subLink {
+      white-space: nowrap;
+      padding: $gutter / 1.4;
+      border-color: #fff;
+    }
+  }
+}
+
+// Horizontal dropdown centering, only when supported
+// http://caniuse.com/#search=supports
+@media (min-width: 1024px) {
+  @supports (transform: translateX(-50%)) {
+    .animenu__nav {
+      &__child {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &__subItem {
+        &:first-child > a::after,
+        &:first-child > a::before {
+          left: 50%;
+          margin-left: -4px;
+        }
+      }
+    }
+  }
+}
